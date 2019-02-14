@@ -1,0 +1,3 @@
+# Install programs from App Store
+echo installing Xcode
+mas lucky xcode

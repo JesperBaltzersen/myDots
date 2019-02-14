@@ -1,0 +1,24 @@
+###############################################################################
+# .Net / Mono                                                                 #
+###############################################################################
+echo installing dotnet
+brew cask install dotnet
+brew cask install dotnet-sdk
+
+echo intalling Visual Studio
+brew cask install visual-studio
+
+echo installing Visual Studio Code
+brew cask install visual-studio-code
+
+###############################################################################
+# Mobil                                                                       #
+###############################################################################
+
+echo installing Android Studio
+brew cask install android-studio
+wait
+open /Applications/Android\ Studio.app
+
+echo installing Intellij Idea Community Edition
+brew cask install intellij-idea-ce

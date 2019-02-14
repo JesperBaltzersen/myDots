@@ -1,0 +1,30 @@
+echo Fiddler https://www.telerik.com/download/fiddler
+
+
+
+# Install flutter
+echo Flutter https://flutter.io/setup-macos/
+echo Press enter when download of Flutter is finished
+read
+
+cd ~/development
+unzip ~/Downloads/flutter_macos_v0.3.1-beta.zip
+export PATH=`pwd`/flutter/bin:$PATH
+
+echo Press enter when unzip is finished
+read
+
+brew cask install android-sdk
+flutter doctor --android-licenses
+
+brew reinstall python@2
+pip install six
+brew install --HEAD libimobiledevice
+brew install ideviceinstaller
+brew install ios-deploy
+brew install cocoapods
+pod setup
+
+flutter doctor
+
+cd 

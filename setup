@@ -1,0 +1,87 @@
+# setup
+# Installing apps, setting up OSX (via .osx) and symlinking dotfiles.
+
+###############################################################################
+# Installing apps                                                             #
+###############################################################################
+
+# Install Xcode cli-tools
+xcode-select --install
+sudo xcodebuild -license
+
+# Install Brew (http://brew.sh)
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# Install Caskroom (http://caskroom.io)
+brew install caskroom/cask/brew-cask
+
+# Install REAL python (including pip etc.)
+brew install python
+brew install python3
+
+# Install brew formulas
+brew install mas
+brew install irssi
+brew install ssh-copy-id
+brew install bash-completion
+brew install youtube-dl
+brew install tree
+brew install shellcheck
+brew install nmap
+
+# Install casks
+brew cask install atom
+brew cask install google-chrome
+brew cask install hazel
+brew cask install little-snitch
+brew cask install microsoft-office
+brew cask install subler
+brew cask install the-unarchiver
+brew cask install transmission
+brew cask install tunnelblick
+brew cask install vlc
+brew cask install vmware-horizon-client
+brew cask install wireshark
+brew cask install caffeine
+brew cask install sizeup
+brew cask install spectacle
+
+###############################################################################
+# Setting up OSX                                                              #
+###############################################################################
+
+source ./.osx
+
+###############################################################################
+# Symlinking dotfiles                                                         #
+###############################################################################
+
+CURRENTDIR=$(pwd -L)
+ln -s $CURRENTDIR/.bash_aliases ~/.bash_aliases
+ln -s $CURRENTDIR/.bash_logout ~/.bash_logout
+ln -s $CURRENTDIR/.bash_profile ~/.bash_profile
+ln -s $CURRENTDIR/.bash_prompt ~/.bash_prompt
+ln -s $CURRENTDIR/.bashrc ~/.bashrc
+ln -s $CURRENTDIR/.vimrc ~/.vimrc
+
+###############################################################################
+# Install from App Store                                                      #
+###############################################################################
+
+source ./.mas
+
+###############################################################################
+# Install dev specific stuff                                                  #
+###############################################################################
+
+# Make a directory for development stuff
+mkdir ~/development
+
+
+source ./.development
+
+###############################################################################
+# Print what to install manually                                              #
+###############################################################################
+
+source ./.manual_installs
